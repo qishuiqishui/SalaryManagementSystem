@@ -10,13 +10,13 @@
 int compare_salary(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;
 	const employee* emp2 = (const employee*)b;
-	return (emp1->salary > emp2->salary) - (emp1->salary < emp2->salary);
+	return  (emp1->salary < emp2->salary) - (emp1->salary > emp2->salary);
 }
 
 int compare_actual(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;
 	const employee* emp2 = (const employee*)b;
-	return (emp1->actual > emp2->actual) - (emp1->actual < emp2->actual);
+	return (emp1->actual < emp2->actual) - (emp1->actual > emp2->actual);
 }
 
 int compare_id(const void* a, const void* b) {
@@ -299,7 +299,6 @@ void search_employee_data(LinkedList* head) {
 			}
 		}
 	}
-
 }
 
 void search_by_id(LinkedList* head) {
@@ -639,6 +638,52 @@ void delete_employee_data(LinkedList* head) {
 }
 
 void sort_employee(LinkedList* head) {
+	system("cls");
+	system("color 03");
+	while (true) {
+		system("cls");
+		printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+		printf("\t\t\t\t\t\t  工资管理系统\n\n");
+		printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+		printf("\t\t\t\t◆                  基本工资排序                  ◆\n\n");
+		printf("\t\t\t\t◆                  实际工资排序                  ◆\n\n");
+		printf("\t\t\t\t◆                  退出                          ◆\n\n");
+		int i = 6;
+		gotoXY(70, i);
+		printf("<=====");
+		while (true) {
+			char ch = getch();
+			if (ch == 13) {
+				switch (i) {
+				case 6:
+					sort_by_salary(head);
+					print_linked_list(head);
+					break;
+				case 8:
+					sort_by_actual(head);
+					print_linked_list(head);
+					break;
+				case 10:
+					return;
+				}
+				break;
+			}
+			else if (ch == -32) {
+				ch = getch();
+				printf("\b\b\b\b\b\b      ");
+				switch (ch) {
+				case 72:
+					if (i != 6)i -= 2;
+					break;
+				case 80:
+					if (i != 10)i += 2;
+					break;
+				}
+				gotoXY(70, i);
+				printf("<=====");
+			}
+		}
+	}
 
 }
 

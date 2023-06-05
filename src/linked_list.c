@@ -97,5 +97,5 @@ void destroy_linked_list(LinkedList* head) {
 }
 
 void sort_linked_list(LinkedList* head) {
-	sort_by_salary(head);
+	sort_employee(head);
 }

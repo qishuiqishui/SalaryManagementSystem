@@ -47,7 +47,7 @@ int main(void) {
 				i = 9;
 				break;
 			case 19:
-				sort_by_salary(head);
+				sort_employee(head);
 				main_menu();
 				i = 9;
 				break;

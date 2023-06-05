@@ -26,5 +26,7 @@ employee* list_to_array(LinkedList* head);
 void sort_by_salary(LinkedList* head);
 int compare_id(const void* a, const void* b);
 void sort_by_id(LinkedList* head);
+void sort_employee(LinkedList* head);
+void sort_by_actual(LinkedList* head);
 
 #endif //SALARYMANAGEMENTSYSTEM_UTILITIES_H
