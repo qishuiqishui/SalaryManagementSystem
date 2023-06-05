@@ -9,7 +9,7 @@ LinkedList* create_linked_list();
 
 void insert_node(LinkedList* head);
 
-void delete_node(LinkedList* head, int id);
+void delete_node(LinkedList* head);
 
 void update_node(LinkedList* head);
 

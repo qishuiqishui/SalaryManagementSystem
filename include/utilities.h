@@ -20,5 +20,6 @@ void search_employee_data(LinkedList* head);
 void search_by_name(LinkedList* head);
 void search_by_id(LinkedList* head);
 void destroy_linked_list(LinkedList* head);
+void delete_employee_data(LinkedList* head);
 
 #endif //SALARYMANAGEMENTSYSTEM_UTILITIES_H

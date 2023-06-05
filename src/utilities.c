@@ -490,3 +490,120 @@ void search_by_name(LinkedList* head) {
 		}
 	}
 }
+
+void delete_employee_data(LinkedList* head) {
+	LinkedList* p = head;
+	LinkedList* temp;
+	int id;
+	show_console_cursor();
+	system("cls");
+	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+	printf("\t\t\t\t\t\t  工资管理系统\n\n");
+	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+	printf("\t\t\t\t◆                请输入要删除职工的ID             ◆\n\n");
+	printf("\t\t\t\t===============>职工号：");
+	scanf("%d", &id);
+	hide_console_cursor();
+	bool flag = false;
+	while (p->next != NULL) {
+		if (p->next->data.id == id) {
+			temp = p->next;
+			flag = true;
+			break;
+		}
+		p = p->next;
+	}
+	while (true) {
+		if (flag) {
+			system("cls");
+			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+			printf("\t\t\t\t\t\t  工资管理系统\n\n");
+			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+			printf("\t\t\t\t\t\t职工号：%d\n", temp->data.id);
+			printf("\t\t\t\t\t\t姓名：%s\n", temp->data.name);
+			printf("\t\t\t\t\t\t基本工资：%.2f\n", temp->data.salary);
+			printf("\t\t\t\t\t\t奖金：%.2f\n", temp->data.bonus);
+			printf("\t\t\t\t\t\t罚金：%.2f\n", temp->data.fine);
+			printf("\t\t\t\t\t\t实发工资：%.2f\n\n", temp->data.actual);
+			printf("\t\t\t\t\t\t确认删除吗？\n\n");
+			printf("\t\t\t\t◆                  重新输入                      ◆\n\n");
+			printf("\t\t\t\t◆                  确认                          ◆\n\n");
+			printf("\t\t\t\t◆                  退出                          ◆\n\n");
+			int i = 15;
+			gotoXY(70, i);
+			printf("<=====");
+			while (true) {
+				char ch = getch();
+				if (ch == 13) {
+					switch (i) {
+					case 15:
+						delete_node(head);
+						return;
+					case 17:
+						p->next = p->next->next;
+						free(temp);
+						printf("已经成功删除！");
+						return;
+					case 19:
+						return;
+					}
+				}
+				else if (ch == -32) {
+					ch = getch();
+					printf("\b\b\b\b\b\b      ");
+					switch (ch) {
+					case 72:
+						if (i != 15)i -= 2;
+						break;
+					case 80:
+						if (i != 19)i += 2;
+						break;
+					}
+					gotoXY(70, i);
+					printf("<=====");
+				}
+			}
+		}
+		else {
+			system("cls");
+			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+			printf("\t\t\t\t\t\t  工资管理系统\n\n");
+			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+			printf("\t\t\t\t                   查无此人!!!                    \n\n");
+			printf("\t\t\t\t◆                  重新输入                      ◆\n\n");
+			printf("\t\t\t\t◆                  退出                          ◆\n\n");
+			int i = 8;
+			gotoXY(70, i);
+			printf("<=====");
+			while (true) {
+				char ch = getch();
+				if (ch == 13) {
+					switch (i) {
+					case 8:
+						printf("\n\n\n\n\t\t\t\t\t\t◆请重新输入◆\n");
+						printf("\t\t\t\t\t\t(按任意键继续)\n\n");
+						getch();
+						search_by_id(head);
+						return;
+					case 10:
+						return;
+					}
+				}
+				else if (ch == -32) {
+					ch = getch();
+					printf("\b\b\b\b\b\b      ");
+					switch (ch) {
+					case 72:
+						if (i != 8)i -= 2;
+						break;
+					case 80:
+						if (i != 10)i += 2;
+						break;
+					}
+					gotoXY(70, i);
+					printf("<=====");
+				}
+			}
+		}
+	}
+}

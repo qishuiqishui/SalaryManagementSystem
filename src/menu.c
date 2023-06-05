@@ -14,8 +14,8 @@ void main_menu() {
 	printf("\t\t\t\t\t\t  工资管理系统\n\n");
 	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
 	printf("\t\t\t\t☆             Ⅰ.创建职工工资信息               ☆\n\n");
-	printf("\t\t\t\t★             Ⅱ.修改职工工资信息               ★\n\n");
-	printf("\t\t\t\t☆             Ⅲ.删除职工工资信息               ☆\n\n");
+	printf("\t\t\t\t★             Ⅱ.删除职工工资信息               ★\n\n");
+	printf("\t\t\t\t☆             Ⅲ.修改职工工资信息               ☆\n\n");
 	printf("\t\t\t\t★             Ⅳ.查询职工工资信息               ★\n\n");
 	printf("\t\t\t\t☆             Ⅴ.信息总查询                     ☆\n\n");
 	printf("\t\t\t\t★             Ⅵ.工资排名查询                   ★\n\n");

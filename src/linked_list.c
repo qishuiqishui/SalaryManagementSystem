@@ -27,17 +27,8 @@ void insert_node(LinkedList* head) {
 	head->next = node;
 }
 
-void delete_node(LinkedList* head, int id) {
-	LinkedList* p = head;
-	while (p->next != NULL) {
-		if (p->next->data.id == id) {
-			LinkedList* temp = p->next;
-			p->next = p->next->next;
-			free(temp);
-			return;
-		}
-		p = p->next;
-	}
+void delete_node(LinkedList* head) {
+	delete_employee_data(head);
 }
 
 void update_node(LinkedList* head) {
