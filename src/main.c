@@ -26,11 +26,12 @@ int main(void) {
 				i = 9;
 				break;
 			case 11:
-				update_node(head);
+
 				main_menu();
 				i = 9;
 				break;
 			case 13:
+				update_node(head);
 				main_menu();
 				i = 9;
 				break;
