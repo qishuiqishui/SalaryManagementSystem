@@ -11,9 +11,9 @@
 
 int main(void) {
 	LinkedList* head = create_linked_list();
-	//print_startup_screen();
+	print_startup_screen();
 	read_file(head);
-	//print_startup_message();
+	print_startup_message();
 	hide_console_cursor();
 	main_menu();
 	int i = 9;
