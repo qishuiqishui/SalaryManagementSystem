@@ -15,5 +15,9 @@ typedef struct LinkedList {
 } LinkedList;
 
 employee* create_employee_data(head);
-employee* update_by_id(LinkedList* head, int id);
+employee* update_employee_data(LinkedList* head, int id);
+void search_employee_data(LinkedList* head);
+void search_by_name(LinkedList* head);
+void search_by_id(LinkedList* head);
+
 #endif //SALARYMANAGEMENTSYSTEM_UTILITIES_H

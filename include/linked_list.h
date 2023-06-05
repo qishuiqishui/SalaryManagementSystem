@@ -13,7 +13,7 @@ void delete_node(LinkedList* head, int id);
 
 void update_node(LinkedList* head);
 
-void search_node(LinkedList* head, int id);
+void search_node(LinkedList* head);
 
 void print_linked_list(LinkedList* head);
 

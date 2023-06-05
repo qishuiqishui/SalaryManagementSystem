@@ -52,7 +52,7 @@ void update_node(LinkedList* head) {
 	printf("\t\t\t\t===============>职工号：");
 	scanf("%d", &id);
 	hide_console_cursor();
-	employee* new_data = update_by_id(head, id);
+	employee* new_data = update_employee_data(head, id);
 	if (new_data == NULL) {
 		return;
 	}
@@ -65,27 +65,8 @@ void update_node(LinkedList* head) {
 	}
 }
 
-void search_node(LinkedList* head, int id) {
-	LinkedList* p = head;
-	while (p->next != NULL) {
-		if (p->next->data.id == id) {
-			printf("找到了\n");
-			return;
-		}
-		p = p->next;
-	}
-	printf("没找到\n");
-}
-
-bool search_by_id(LinkedList* head, int id) {
-	LinkedList* p = head;
-	while (p->next != NULL) {
-		if (p->next->data.id == id) {
-			return;
-		}
-		p = p->next;
-	}
-	printf("没找到\n");
+void search_node(LinkedList* head) {
+	search_employee_data(head);
 }
 
 void print_linked_list(LinkedList* head) {

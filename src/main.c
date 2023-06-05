@@ -10,9 +10,9 @@
 
 int main(void) {
 	LinkedList* head = create_linked_list();
-	print_startup_screen();
+	//print_startup_screen();
 	read_file(head);
-	print_startup_message();
+	//print_startup_message();
 	hide_console_cursor();
 	main_menu();
 	int i = 9;
@@ -35,7 +35,7 @@ int main(void) {
 				i = 9;
 				break;
 			case 15:
-				print_linked_list(head);
+				search_node(head);
 				main_menu();
 				i = 9;
 				break;
