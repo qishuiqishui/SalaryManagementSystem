@@ -51,13 +51,12 @@ void save_file(LinkedList* head) {
 		printf("出现异常！");
 		exit(1);
 	}
-
+	sort_by_id(head);
 	LinkedList* L = head->next; // 跳过头节点
 	while (L != NULL) {
 		fprintf(fp, "%d %s %.2f %.2f %.2f %.2f\n", L->data.id, L->data.name, L->data.salary, L->data.bonus, L->data.fine, L->data.actual);
 		L = L->next;
 	}
-
 	printf("\n\n\n\n\t\t\t\t\t工资信息文件保存成功");
 	fclose(fp);
 	getch();

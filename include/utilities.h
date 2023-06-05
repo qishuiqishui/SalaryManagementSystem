@@ -21,5 +21,10 @@ void search_by_name(LinkedList* head);
 void search_by_id(LinkedList* head);
 void destroy_linked_list(LinkedList* head);
 void delete_employee_data(LinkedList* head);
+int compare_salary(const void* a, const void* b);
+employee* list_to_array(LinkedList* head);
+void sort_by_salary(LinkedList* head);
+int compare_id(const void* a, const void* b);
+void sort_by_id(LinkedList* head);
 
 #endif //SALARYMANAGEMENTSYSTEM_UTILITIES_H

@@ -7,6 +7,36 @@
 #include "stdbool.h"
 #include "conio.h"
 
+int compare_salary(const void* a, const void* b) {
+	const employee* emp1 = (const employee*)a;
+	const employee* emp2 = (const employee*)b;
+	return (emp1->salary > emp2->salary) - (emp1->salary < emp2->salary);
+}
+
+int compare_actual(const void* a, const void* b) {
+	const employee* emp1 = (const employee*)a;
+	const employee* emp2 = (const employee*)b;
+	return (emp1->actual > emp2->actual) - (emp1->actual < emp2->actual);
+}
+
+int compare_id(const void* a, const void* b) {
+	const employee* emp1 = (const employee*)a;
+	const employee* emp2 = (const employee*)b;
+	return emp1->id - emp2->id;
+}
+
+employee* list_to_array(LinkedList* head) {
+	int size = get_linked_list_size(head);
+	employee* arr = (employee*)malloc(sizeof(employee) * size);
+	LinkedList* current = head->next;
+	for (int i = 0; i < size; i++) {
+		arr[i] = current->data;
+		current = current->next;
+	}
+	// 返回数组指针
+	return arr;
+}
+
 employee* create_employee_data(LinkedList* head) {
 	while (true) {
 		show_console_cursor();
@@ -606,4 +636,68 @@ void delete_employee_data(LinkedList* head) {
 			}
 		}
 	}
+}
+
+void sort_employee(LinkedList* head) {
+
+}
+
+void sort_by_salary(LinkedList* head) {
+	int size = get_linked_list_size(head);
+
+	// 将链表转换为数组
+	employee* arr = list_to_array(head);
+
+	// 使用 qsort 函数进行排序
+	qsort(arr, size, sizeof(employee), compare_salary);
+
+	// 更新链表中的数据
+	LinkedList* current = head->next;
+	for (int i = 0; i < size; i++) {
+		current->data = arr[i];
+		current = current->next;
+	}
+
+	// 释放数组内存
+	free(arr);
+}
+
+void sort_by_id(LinkedList* head) {
+	int size = get_linked_list_size(head);
+
+	// 将链表转换为数组
+	employee* arr = list_to_array(head);
+
+	// 使用 qsort 函数进行排序
+	qsort(arr, size, sizeof(employee), compare_id);
+
+	// 更新链表中的数据
+	LinkedList* current = head->next;
+	for (int i = 0; i < size; i++) {
+		current->data = arr[i];
+		current = current->next;
+	}
+
+	// 释放数组内存
+	free(arr);
+}
+
+void sort_by_actual(LinkedList* head) {
+	int size = get_linked_list_size(head);
+
+	// 将链表转换为数组
+	employee* arr = list_to_array(head);
+
+	// 使用 qsort 函数进行排序
+	qsort(arr, size, sizeof(employee), compare_actual);
+
+	// 更新链表中的数据
+	LinkedList* current = head->next;
+	for (int i = 0; i < size; i++) {
+		current->data = arr[i];
+		current = current->next;
+	}
+
+	// 释放数组内存
+	free(arr);
 }
