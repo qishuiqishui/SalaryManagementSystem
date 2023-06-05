@@ -55,7 +55,6 @@ int main(void) {
 				break;
 			case 23:
 				save_and_exit(head);
-				free(head);
 				return 0;
 			}
 		}
