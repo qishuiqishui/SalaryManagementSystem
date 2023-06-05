@@ -75,9 +75,9 @@ void print_linked_list(LinkedList* head) {
 	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
 	printf("\t\t\t\t\t\t  工资管理系统\n\n");
 	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
-	printf("\t\t\t\t编号 姓名 基本工资  奖金      罚金     实发工资\n\n");
+	printf("\t\t\t\t编号    姓名    基本工资  奖金      罚金     实发工资\n\n");
 	while (p != NULL) {
-		printf("\t\t\t\t%-5d%-5s%-10.2f%-10.2f%-9.2f%-9.2f\n", p->data.id, p->data.name, p->data.salary, p->data.bonus, p->data.fine, p->data.actual);
+		printf("\t\t\t\t%-8d%-8s%-10.2f%-10.2f%-9.2f%-9.2f\n", p->data.id, p->data.name, p->data.salary, p->data.bonus, p->data.fine, p->data.actual);
 		p = p->next;
 	}
 	printf("\n\n\n\t\t\t\t按任意键返回菜单\n\n");
@@ -92,4 +92,15 @@ int get_linked_list_size(LinkedList* head) {
 		p = p->next;
 	}
 	return size;
+}
+
+void destroy_linked_list(LinkedList* head) {
+	LinkedList* current = head;
+	LinkedList* next;
+
+	while (current != NULL) {
+		next = current->next;
+		free(current);
+		current = next;
+	}
 }

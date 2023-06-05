@@ -17,8 +17,10 @@ void main_menu() {
 	printf("\t\t\t\t★             Ⅱ.修改职工工资信息               ★\n\n");
 	printf("\t\t\t\t☆             Ⅲ.删除职工工资信息               ☆\n\n");
 	printf("\t\t\t\t★             Ⅳ.查询职工工资信息               ★\n\n");
-	printf("\t\t\t\t☆             Ⅴ.工资排名查询                   ☆\n\n");
-	printf("\t\t\t\t☆             Ⅵ.保存文件并退出                 ☆\n\n");
+	printf("\t\t\t\t☆             Ⅴ.信息总查询                     ☆\n\n");
+	printf("\t\t\t\t★             Ⅵ.工资排名查询                   ★\n\n");
+	printf("\t\t\t\t☆             Ⅶ.保存文件                       ☆\n\n");
+	printf("\t\t\t\t★             Ⅷ.保存文件并退出                 ★\n\n");
 	printf("使用说明：上下键选择，回车键确定\n");
 	gotoXY(70, i);
 	printf("<=====");

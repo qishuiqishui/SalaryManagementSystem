@@ -48,7 +48,7 @@ void read_file(LinkedList* head) {
 void save_file(LinkedList* head) {
 	FILE* fp;
 	if ((fp = fopen("data.txt", "w")) == NULL) {
-		printf("文件打开失败！");
+		printf("出现异常！");
 		exit(1);
 	}
 
@@ -58,7 +58,14 @@ void save_file(LinkedList* head) {
 		L = L->next;
 	}
 
-	printf("\n\t\t\t\t\t工资信息文件保存成功");
+	printf("\n\n\n\n\t\t\t\t\t工资信息文件保存成功");
 	fclose(fp);
+	getch();
+}
+
+void save_and_exit(LinkedList* head) {
+	save_file(head);
+	destroy_linked_list(head);
+	printf("\n\t\t\t\t\t欢迎下次使用~");
 	getch();
 }

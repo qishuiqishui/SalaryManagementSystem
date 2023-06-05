@@ -326,10 +326,10 @@ void search_by_id(LinkedList* head) {
 					printf("\b\b\b\b\b\b      ");
 					switch (ch) {
 					case 72:
-						if (i != 9)i -= 2;
+						if (i != 13)i -= 2;
 						break;
 					case 80:
-						if (i != 11)i += 2;
+						if (i != 15)i += 2;
 						break;
 					}
 					gotoXY(70, i);
@@ -395,38 +395,39 @@ void search_by_name(LinkedList* head) {
 	scanf("%s", name);
 	hide_console_cursor();
 	bool flag = false;
+	int count = 0;
+	system("cls");
 	while (p->next != NULL) {
 		if (strcmp(p->next->data.name, name) == 0) {
+			if (count == 0) {
+				printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+				printf("\t\t\t\t\t\t  工资管理系统\n\n");
+				printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+				printf("\t\t\t\t编号    姓名    基本工资  奖金      罚金     实发工资\n\n");
+			}
+			printf("\t\t\t\t%-8d%-8s%-10.2f%-10.2f%-9.2f%-9.2f\n", p->next->data.id, p->next->data.name, p->next->data.salary, p->next->data.bonus, p->next->data.fine, p->next->data.actual);
+			count++;
 			flag = true;
-			break;
 		}
 		p = p->next;
 	}
 	while (true) {
 		if (flag) {
-			system("cls");
-			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
-			printf("\t\t\t\t\t\t  工资管理系统\n\n");
-			printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
-			printf("\t\t\t\t\t\t职工号：%d\n", p->next->data.id);
-			printf("\t\t\t\t\t\t姓名：%s\n", p->next->data.name);
-			printf("\t\t\t\t\t\t基本工资：%.2f\n", p->next->data.salary);
-			printf("\t\t\t\t\t\t奖金：%.2f\n", p->next->data.bonus);
-			printf("\t\t\t\t\t\t罚金：%.2f\n", p->next->data.fine);
-			printf("\t\t\t\t\t\t实发工资：%.2f\n\n", p->next->data.actual);
 			printf("\t\t\t\t◆                  重新输入                      ◆\n\n");
 			printf("\t\t\t\t◆                  退出                          ◆\n\n");
-			int i = 13;
+			int i = 8 + count;
+			int left = i;
+			int right = left + 2;
 			gotoXY(70, i);
 			printf("<=====");
 			while (true) {
 				char ch = getch();
 				if (ch == 13) {
-					switch (i) {
-					case 13:
+					if (i == 8 + count) {
 						search_by_name(head);
 						return;
-					case 15:
+					}
+					else {
 						return;
 					}
 				}
@@ -435,10 +436,10 @@ void search_by_name(LinkedList* head) {
 					printf("\b\b\b\b\b\b      ");
 					switch (ch) {
 					case 72:
-						if (i != 9)i -= 2;
+						if (i != left)i -= 2;
 						break;
 					case 80:
-						if (i != 11)i += 2;
+						if (i != right)i += 2;
 						break;
 					}
 					gotoXY(70, i);

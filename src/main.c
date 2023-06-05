@@ -1,6 +1,7 @@
 #include <conio.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "../include/utilities.h"
 #include "../include/linked_list.h"
 #include "../include/file_io.h"
@@ -41,11 +42,20 @@ int main(void) {
 				i = 9;
 				break;
 			case 17:
+				print_linked_list(head);
 				main_menu();
 				i = 9;
 				break;
 			case 19:
+
+			case 21:
 				save_file(head);
+				main_menu();
+				i = 9;
+				break;
+			case 23:
+				save_and_exit(head);
+				free(head);
 				return 0;
 			}
 		}
@@ -57,7 +67,7 @@ int main(void) {
 				if (i != 9)i -= 2;
 				break;
 			case 80:
-				if (i != 19)i += 2;
+				if (i != 23)i += 2;
 				break;
 			}
 			gotoXY(70, i);
