@@ -72,7 +72,7 @@ void function_service(LinkedList* head) {
 		}
 		else if (ch == -32) {
 			ch = getch();
-			printf("\b\b\b\b\b\b      ");
+			clear_arrow();
 			switch (ch) {
 			case 72:
 				if (i != 9)i -= 2;

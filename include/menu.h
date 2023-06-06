@@ -14,6 +14,7 @@ void print_salary_prompt();    // 函数声明
 void print_bonus_prompt();    // 函数声明
 void print_fine_prompt();    // 函数声明
 void print_arrow();
+void clear_arrow();
 void print_confirm_options();
 void print_options();
 #endif //SALARYMANAGEMENTSYSTEM_MENU_H

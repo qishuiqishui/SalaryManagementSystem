@@ -91,6 +91,10 @@ void print_arrow() {
 	printf("<=====");
 }
 
+void clear_arrow() {
+	printf("\b\b\b\b\b\b      ");
+}
+
 void print_confirm_options() {
 	printf("\t\t\t\t◆                  重新输入                      ◆\n\n");
 	printf("\t\t\t\t◆                  确认                          ◆\n\n");

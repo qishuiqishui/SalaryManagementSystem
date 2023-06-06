@@ -349,8 +349,7 @@ void search_by_id(LinkedList* head) {
 				if (ch == 13) {
 					switch (i) {
 					case 8:
-						printf("\n\n\n\n\t\t\t\t\t\t◆请重新输入◆\n");
-						printf("\t\t\t\t\t\t(按任意键继续)\n\n");
+						printf("\n\n\n\n\t\t\t\t\t\t请重新输入(按任意键继续)\n");
 						getch();
 						search_by_id(head);
 						return;
@@ -424,7 +423,7 @@ void search_by_name(LinkedList* head) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != left)i -= 2;
