@@ -37,6 +37,7 @@ void update_node(LinkedList* head) {
 	int id;
 	show_console_cursor();
 	system("cls");
+	system("color 03");
 	print_menu_header();
 	print_input_prompt();
 	print_id_prompt();

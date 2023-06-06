@@ -63,7 +63,7 @@ void print_update_menu() {
 }
 
 void print_input_prompt() {
-	printf("\t\t\t\t◆                请输入                          ◆\n\n");
+	printf("\t\t\t\t                请输入                          \n\n");
 }
 
 void print_name_prompt() {
@@ -102,6 +102,6 @@ void print_confirm_options() {
 }
 
 void print_options() {
-	printf("\t\t\t\t◆                  重新输入                      ◆\n\n");
+	printf("\n\t\t\t\t◆                  重新输入                      ◆\n\n");
 	printf("\t\t\t\t◆                  退出                          ◆\n\n");
 }

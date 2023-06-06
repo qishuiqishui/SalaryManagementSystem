@@ -53,9 +53,6 @@
     <ClCompile Include="src\utilities.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\run_application.c">
       <Filter>源文件</Filter>
     </ClCompile>

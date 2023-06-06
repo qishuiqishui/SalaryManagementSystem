@@ -53,8 +53,7 @@ employee* create_employee_data(LinkedList* head) {
 		while (p->next != NULL) {
 			if (p->next->data.id == data->id) {
 				hide_console_cursor();
-				printf("\n\n\n\t\t\t\t\t 职工号已存在！请重新输入!!! \n\n");
-				printf("\n\t\t\t\t\t\t(按任意键继续)\n\n");
+				printf("\n\n\n\t\t\t\t\t 职工号已存在！请重新输入!!! (按任意键继续)\n\n");
 				getch();
 				flag = true;
 				break;
@@ -105,7 +104,7 @@ employee* create_employee_data(LinkedList* head) {
 			}
 			else if (ch == -32) {
 				ch = getch();
-				printf("\b\b\b\b\b\b      ");
+				clear_arrow();
 				switch (ch) {
 				case 72:
 					if (i != 16)i -= 2;
@@ -122,8 +121,6 @@ employee* create_employee_data(LinkedList* head) {
 }
 
 employee* update_employee_data(LinkedList* head, int id) {
-	system("cls");
-	system("color 03");
 	LinkedList* p = head;
 	employee* new_data = (employee*)malloc(sizeof(employee));
 	bool flag = false;
@@ -138,11 +135,12 @@ employee* update_employee_data(LinkedList* head, int id) {
 	while (true) {
 		if (flag) {
 			system("cls");
+			system("color 03");
 			print_menu_header();
 			print_salary_header();
-			printf("\t\t\t\t%-5d%-5s%-10.2f%-10.2f%-9.2f%-9.2f\n\n", new_data->id, new_data->name, new_data->salary, new_data->bonus, new_data->fine, new_data->actual);
+			printf("\t\t\t\t%-8d%-8s%-10.2f%-10.2f%-9.2f%-9.2f\n\n", new_data->id, new_data->name, new_data->salary, new_data->bonus, new_data->fine, new_data->actual);
 			print_update_menu();
-			int i = 9;
+			int i = 10;
 			gotoXY(70, i);
 			print_arrow();
 			while (true) {
@@ -150,27 +148,31 @@ employee* update_employee_data(LinkedList* head, int id) {
 				if (ch == 13) {
 					show_console_cursor();
 					switch (i) {
-					case 9:
+					case 10:
+						printf("\n\n\n\n\n\n\n\n\n\n");
 						print_input_prompt();
 						print_name_prompt();
 						scanf("%s", new_data->name);
 						break;
-					case 11:
+					case 12:
+						printf("\n\n\n\n\n\n\n\n");
 						print_input_prompt();
 						print_salary_prompt();
 						scanf("%f", &new_data->salary);
 						break;
-					case 13:
+					case 14:
+						printf("\n\n\n\n\n\n");
 						print_input_prompt();
 						print_bonus_prompt();
 						scanf("%f", &new_data->bonus);
 						break;
-					case 15:
+					case 16:
+						printf("\n\n\n\n");
 						print_input_prompt();
 						print_fine_prompt();
 						scanf("%f", &new_data->fine);
 						break;
-					case 17:
+					case 18:
 						return new_data;
 					}
 					new_data->actual = new_data->salary + new_data->bonus - new_data->fine;
@@ -179,13 +181,13 @@ employee* update_employee_data(LinkedList* head, int id) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
-						if (i != 9)i -= 2;
+						if (i != 10)i -= 2;
 						break;
 					case 80:
-						if (i != 17)i += 2;
+						if (i != 18)i += 2;
 						break;
 					}
 					gotoXY(70, i);
@@ -217,7 +219,7 @@ employee* update_employee_data(LinkedList* head, int id) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != 8)i -= 2;
@@ -247,7 +249,6 @@ void search_employee_data(LinkedList* head) {
 		while (true) {
 			char ch = getch();
 			if (ch == 13) {
-
 				switch (i) {
 				case 6:
 					search_by_id(head);
@@ -262,7 +263,7 @@ void search_employee_data(LinkedList* head) {
 			}
 			else if (ch == -32) {
 				ch = getch();
-				printf("\b\b\b\b\b\b      ");
+				clear_arrow();
 				switch (ch) {
 				case 72:
 					if (i != 6)i -= 2;
@@ -308,29 +309,29 @@ void search_by_id(LinkedList* head) {
 			printf("\t\t\t\t\t\t罚金：%.2f\n", p->next->data.fine);
 			printf("\t\t\t\t\t\t实发工资：%.2f\n\n", p->next->data.actual);
 			print_options();
-			int i = 13;
+			int i = 14;
 			gotoXY(70, i);
 			print_arrow();
 			while (true) {
 				char ch = getch();
 				if (ch == 13) {
 					switch (i) {
-					case 13:
+					case 14:
 						search_by_id(head);
 						return;
-					case 15:
+					case 16:
 						return;
 					}
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
-						if (i != 13)i -= 2;
+						if (i != 14)i -= 2;
 						break;
 					case 80:
-						if (i != 15)i += 2;
+						if (i != 16)i += 2;
 						break;
 					}
 					gotoXY(70, i);
@@ -340,6 +341,7 @@ void search_by_id(LinkedList* head) {
 		}
 		else {
 			system("cls");
+			print_menu_header();
 			print_search_error_menu();
 			int i = 8;
 			gotoXY(70, i);
@@ -359,7 +361,7 @@ void search_by_id(LinkedList* head) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != 8)i -= 2;
@@ -405,7 +407,7 @@ void search_by_name(LinkedList* head) {
 	while (true) {
 		if (flag) {
 			print_options();
-			int i = 8 + count;
+			int i = 9 + count;
 			int left = i;
 			int right = left + 2;
 			gotoXY(70, i);
@@ -413,7 +415,7 @@ void search_by_name(LinkedList* head) {
 			while (true) {
 				char ch = getch();
 				if (ch == 13) {
-					if (i == 8 + count) {
+					if (i == 9 + count) {
 						search_by_name(head);
 						return;
 					}
@@ -459,7 +461,7 @@ void search_by_name(LinkedList* head) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != 8)i -= 2;
@@ -482,6 +484,7 @@ void delete_employee_data(LinkedList* head) {
 	int id;
 	show_console_cursor();
 	system("cls");
+	system("color 03");
 	print_menu_header();
 	print_input_prompt();
 	print_id_prompt();
@@ -529,7 +532,7 @@ void delete_employee_data(LinkedList* head) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != 15)i -= 2;
@@ -565,7 +568,7 @@ void delete_employee_data(LinkedList* head) {
 				}
 				else if (ch == -32) {
 					ch = getch();
-					printf("\b\b\b\b\b\b      ");
+					clear_arrow();
 					switch (ch) {
 					case 72:
 						if (i != 8)i -= 2;
@@ -611,7 +614,7 @@ void sort_employee(LinkedList* head) {
 			}
 			else if (ch == -32) {
 				ch = getch();
-				printf("\b\b\b\b\b\b      ");
+				clear_arrow();
 				switch (ch) {
 				case 72:
 					if (i != 6)i -= 2;

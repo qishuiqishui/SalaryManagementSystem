@@ -138,7 +138,6 @@
     <ClCompile Include="src\cursor_control.c" />
     <ClCompile Include="src\file_io.c" />
     <ClCompile Include="src\linked_list.c" />
-    <ClCompile Include="src\main.c" />
     <ClCompile Include="src\menu.c" />
     <ClCompile Include="src\pattern.c" />
     <ClCompile Include="src\run_application.c" />

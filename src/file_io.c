@@ -6,11 +6,6 @@
 
 void read_file(LinkedList* head) {
 	FILE* fp;
-	/*if ((fp = fopen("数据.txt", "rb")) == NULL) {
-		printf("文件打开失败！");
-		getch();
-		exit(1);
-	}*/
 	if ((fp = fopen("data.txt", "rb")) == NULL) {
 		printf("文件不存在，创建新文件\n");
 		fp = fopen("data.txt", "w");
