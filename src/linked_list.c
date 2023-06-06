@@ -1,5 +1,6 @@
 #include "../include/linked_list.h"
 #include "../include/cursor_control.h"
+#include "../include/menu.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "stdbool.h"
@@ -36,11 +37,9 @@ void update_node(LinkedList* head) {
 	int id;
 	show_console_cursor();
 	system("cls");
-	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");
-	printf("\t\t\t\t\t\t  垢彿砿尖狼由\n\n");
-	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");
-	printf("\t\t\t\t＃                萩補秘勣俐個岼垢議ID             ＃\n\n");
-	printf("\t\t\t\t===============>岼垢催��");
+	print_menu_header();
+	print_input_prompt();
+	print_id_prompt();
 	scanf("%d", &id);
 	hide_console_cursor();
 	employee* new_data = update_employee_data(head, id);
@@ -63,10 +62,8 @@ void search_node(LinkedList* head) {
 void print_linked_list(LinkedList* head) {
 	system("cls");
 	LinkedList* p = head->next;
-	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");
-	printf("\t\t\t\t\t\t  垢彿砿尖狼由\n\n");
-	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");
-	printf("\t\t\t\t園催    侖兆    児云垢彿  襲署      沓署     糞窟垢彿\n\n");
+	print_menu_header();
+	print_salary_header();
 	while (p != NULL) {
 		printf("\t\t\t\t%-8d%-8s%-10.2f%-10.2f%-9.2f%-9.2f\n", p->data.id, p->data.name, p->data.salary, p->data.bonus, p->data.fine, p->data.actual);
 		p = p->next;

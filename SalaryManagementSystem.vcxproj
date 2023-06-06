@@ -141,6 +141,7 @@
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\menu.c" />
     <ClCompile Include="src\pattern.c" />
+    <ClCompile Include="src\run_application.c" />
     <ClCompile Include="src\utilities.c" />
   </ItemGroup>
   <ItemGroup>

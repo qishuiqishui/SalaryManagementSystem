@@ -1,7 +1,4 @@
-#include <conio.h>
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "../include/utilities.h"
 #include "../include/linked_list.h"
 #include "../include/file_io.h"
@@ -9,13 +6,25 @@
 #include "../include/menu.h"
 #include "../include/cursor_control.h"
 
+void init();
+void function_service(LinkedList* head);
+
 int main(void) {
+	init();
+	return 0;
+}
+
+void init() {
 	LinkedList* head = create_linked_list();
 	print_startup_screen();
 	read_file(head);
 	print_startup_message();
 	hide_console_cursor();
 	main_menu();
+	function_service(head);
+}
+
+void function_service(LinkedList* head) {
 	int i = 9;
 	while (true) {
 		char ch = getch();
@@ -73,7 +82,7 @@ int main(void) {
 				break;
 			}
 			gotoXY(70, i);
-			printf("<=====");
+			print_arrow();
 		}
 	}
 }
