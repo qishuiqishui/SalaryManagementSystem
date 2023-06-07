@@ -4,6 +4,21 @@
 #include <stdio.h>
 
 void main_menu() {
+	int i = 6;
+	system("cls");
+	system("color f3");//修改界面颜色
+	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+	printf("\t\t\t\t\t\t  课程设计系统\n\n");
+	printf("\t\t\t\t——————————————————————————————————————————————————\n\n");
+	printf("\t\t\t\t☆             Ⅰ.出售金鱼                         ☆\n\n");
+	printf("\t\t\t\t★             Ⅱ.数字棱形                         ★\n\n");
+	printf("\t\t\t\t☆             Ⅲ.工资管理系统                     ☆\n\n");
+	printf("\t\t\t\t★             Ⅳ.退出                             ★\n\n");
+	printf("使用说明：上下键选择，回车键确定\n");
+	gotoXY(70, i);
+	printf("<=====");
+}
+void salary_management_system_menu() {
 	int i = 9;
 	system("cls");
 	system("color EC");

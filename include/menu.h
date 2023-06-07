@@ -1,6 +1,7 @@
 #ifndef SALARYMANAGEMENTSYSTEM_MENU_H
 #define SALARYMANAGEMENTSYSTEM_MENU_H
 void main_menu();
+void salary_management_system_menu();
 void print_menu_header();
 void print_search_error_menu();
 void print_salary_header();

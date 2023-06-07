@@ -5,69 +5,46 @@
 #include "../include/pattern.h"
 #include "../include/menu.h"
 #include "../include/cursor_control.h"
+#include "../include/print_number_diamond.h"
+#include "../include/sell_goldfish.h"
+#include "../include/salary_management_system_menu.h"
 
-void init();
-void function_service(LinkedList* head);
+
+void function_service();
 
 int main(void) {
-	init();
+
+	function_service();
+	//print_number_diamond();
+	//sell_goldfish();
+	//init();
 	return 0;
 }
 
-void init() {
-	LinkedList* head = create_linked_list();
-	print_startup_screen();
-	read_file(head);
-	print_startup_message();
-	hide_console_cursor();
+void function_service() {
 	main_menu();
-	function_service(head);
-}
-
-void function_service(LinkedList* head) {
-	int i = 9;
+	int i = 6;
 	while (true) {
 		char ch = getch();
 		if (ch == 13) {
 			switch (i) {
-			case 9:
-				insert_node(head);
+			case 6:
+				sell_goldfish();
 				main_menu();
-				i = 9;
+				i = 6;
 				break;
-			case 11:
-				delete_node(head);
+			case 8:
+				print_number_diamond();
 				main_menu();
-				i = 9;
+				i = 6;
 				break;
-			case 13:
-				update_node(head);
+			case 10:
+				salary_management_system();
 				main_menu();
-				i = 9;
+				i = 6;
 				break;
-			case 15:
-				search_node(head);
-				main_menu();
-				i = 9;
-				break;
-			case 17:
-				print_linked_list(head);
-				main_menu();
-				i = 9;
-				break;
-			case 19:
-				sort_employee(head);
-				main_menu();
-				i = 9;
-				break;
-			case 21:
-				save_file(head);
-				main_menu();
-				i = 9;
-				break;
-			case 23:
-				save_and_exit(head);
-				return 0;
+			case 12:
+				return;
 			}
 		}
 		else if (ch == -32) {
@@ -75,10 +52,10 @@ void function_service(LinkedList* head) {
 			clear_arrow();
 			switch (ch) {
 			case 72:
-				if (i != 9)i -= 2;
+				if (i != 6)i -= 2;
 				break;
 			case 80:
-				if (i != 23)i += 2;
+				if (i != 12)i += 2;
 				break;
 			}
 			gotoXY(70, i);

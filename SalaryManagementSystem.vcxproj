@@ -132,6 +132,9 @@
     <ClInclude Include="include\linked_list.h" />
     <ClInclude Include="include\menu.h" />
     <ClInclude Include="include\pattern.h" />
+    <ClInclude Include="include\print_number_diamond.h" />
+    <ClInclude Include="include\salary_management_system_menu.h" />
+    <ClInclude Include="include\sell_goldfish.h" />
     <ClInclude Include="include\utilities.h" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +143,10 @@
     <ClCompile Include="src\linked_list.c" />
     <ClCompile Include="src\menu.c" />
     <ClCompile Include="src\pattern.c" />
+    <ClCompile Include="src\print_number_diamond.c" />
     <ClCompile Include="src\run_application.c" />
+    <ClCompile Include="src\salary_management_system.c" />
+    <ClCompile Include="src\sell_goldfish.c" />
     <ClCompile Include="src\utilities.c" />
   </ItemGroup>
   <ItemGroup>

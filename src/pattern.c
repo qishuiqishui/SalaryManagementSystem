@@ -4,6 +4,7 @@
 
 void print_startup_screen()
 {
+	system("cls");
 	system("color EC");
 	//system("color F0");
 	printf("           *********                                                                         *****         *****\n");

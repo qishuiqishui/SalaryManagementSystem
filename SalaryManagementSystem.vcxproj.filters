@@ -33,6 +33,15 @@
     <ClInclude Include="include\pattern.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\print_number_diamond.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\salary_management_system_menu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sell_goldfish.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cursor_control.c">
@@ -54,6 +63,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\run_application.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sell_goldfish.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\print_number_diamond.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\salary_management_system.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
