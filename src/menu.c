@@ -1,7 +1,7 @@
+#include <windows.h>
+#include <stdio.h>
 #include "../include/cursor_control.h"
 #include "../include/menu.h"
-#include "windows.h"
-#include <stdio.h>
 
 void main_menu() {
 	int i = 6;

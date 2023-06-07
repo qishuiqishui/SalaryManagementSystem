@@ -1,12 +1,13 @@
-﻿#include "../include/utilities.h"
+﻿#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <stdbool.h>
+#include <conio.h>
+#include "../include/utilities.h"
 #include "../include/cursor_control.h"
 #include "../include/linked_list.h"
 #include "../include/menu.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "windows.h"
-#include "stdbool.h"
-#include "conio.h"
+
 
 int compare_salary(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;

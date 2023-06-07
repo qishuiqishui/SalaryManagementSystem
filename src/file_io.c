@@ -1,7 +1,7 @@
 #include <conio.h>
-#include "stdio.h"
-#include "stdlib.h"
-#include "windows.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
 #include "../include/utilities.h"
 
 void read_file(LinkedList* head) {

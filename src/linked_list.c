@@ -1,9 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include "../include/linked_list.h"
 #include "../include/cursor_control.h"
 #include "../include/menu.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "stdbool.h"
 
 LinkedList* create_node(employee* data) {
 	LinkedList* node = (LinkedList*)malloc(sizeof(LinkedList));

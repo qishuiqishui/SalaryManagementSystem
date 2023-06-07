@@ -1,7 +1,8 @@
+#include <stdio.h>
+#include <windows.h>
+#include <conio.h>
 #include "../include/sell_goldfish.h"
-#include <stdio.h>
-#include "windows.h"
-#include <stdio.h>
+
 
 void sell_goldfish() {
 	system("cls");//«Â∆¡

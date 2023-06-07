@@ -1,10 +1,18 @@
 #include <stdio.h>
-#include "../include/linked_list.h"
 #include <stdbool.h>
+#include "../include/salary_management_system_menu.h"
+#include "../include/utilities.h"
+#include "../include/linked_list.h"
+#include "../include/file_io.h"
+#include "../include/pattern.h"
+#include "../include/menu.h"
+#include "../include/cursor_control.h"
+#include "../include/print_number_diamond.h"
+#include "../include/sell_goldfish.h"
 #include "../include/salary_management_system_menu.h"
 
 void init();
-void service();
+void function_service();
 
 void salary_management_system() {
 	init();
@@ -16,10 +24,10 @@ void init() {
 	print_startup_message();
 	hide_console_cursor();
 	salary_management_system_menu();
-	service(head);
+	function_service(head);
 }
 
-void service(LinkedList* head) {
+void function_service(LinkedList* head) {
 	int i = 9;
 	while (true) {
 		char ch = getch();

@@ -1,6 +1,7 @@
-#include "../include/pattern.h"
 #include<stdio.h>
 #include<windows.h>
+#include "../include/pattern.h"
+
 
 void print_startup_screen()
 {

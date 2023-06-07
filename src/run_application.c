@@ -1,8 +1,5 @@
 #include <stdbool.h>
-#include "../include/utilities.h"
-#include "../include/linked_list.h"
-#include "../include/file_io.h"
-#include "../include/pattern.h"
+#include <conio.h>
 #include "../include/menu.h"
 #include "../include/cursor_control.h"
 #include "../include/print_number_diamond.h"
@@ -10,18 +7,14 @@
 #include "../include/salary_management_system_menu.h"
 
 
-void function_service();
+void run_application();
 
 int main(void) {
-
-	function_service();
-	//print_number_diamond();
-	//sell_goldfish();
-	//init();
+	run_application();
 	return 0;
 }
 
-void function_service() {
+void run_application() {
 	main_menu();
 	int i = 6;
 	while (true) {
