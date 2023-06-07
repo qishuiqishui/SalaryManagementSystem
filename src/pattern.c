@@ -2,7 +2,7 @@
 #include<windows.h>
 #include "../include/pattern.h"
 
-
+// 打印初始界面
 void print_startup_screen()
 {
 	system("cls");
@@ -40,6 +40,7 @@ void print_startup_screen()
 	Sleep(200);
 }
 
+// 打印初始语
 void print_startup_message() {
 	printf("\n\n\n");
 	printf("欢");

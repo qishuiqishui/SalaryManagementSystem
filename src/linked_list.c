@@ -1,37 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <conio.h>
 #include "../include/linked_list.h"
 #include "../include/cursor_control.h"
 #include "../include/menu.h"
 
+// 创建节点
 LinkedList* create_node(employee* data) {
+	// 创建新节点
 	LinkedList* node = (LinkedList*)malloc(sizeof(LinkedList));
+
+	// 节点初始化
 	node->data = *data;
 	node->next = NULL;
+
+	// 返回节点
 	return node;
 }
 
+// 创建链表
 LinkedList* create_linked_list() {
+	// 创建头节点
 	LinkedList* head = (LinkedList*)malloc(sizeof(LinkedList));
-	head->next = NULL; // 初始化链表为空
+
+	// 头节点初始化
+	head->next = NULL;
+
+	// 返回头节点
 	return head;
 }
 
+// 插入节点
 void insert_node(LinkedList* head) {
+	// 创建数据
 	employee* data = create_employee_data(head);
+
+	// 若返回NULL，表示用户退出，取消插入操作
 	if (data == NULL) {
 		return;
 	}
+
+	// 创建新节点
 	LinkedList* node = create_node(data);
+
+	// 链表头插法
 	node->next = head->next;
 	head->next = node;
 }
 
+// 删除节点
 void delete_node(LinkedList* head) {
 	delete_employee_data(head);
 }
 
+// 更新节点
 void update_node(LinkedList* head) {
 	LinkedList* p = head;
 	int id;
@@ -56,10 +79,12 @@ void update_node(LinkedList* head) {
 	}
 }
 
+// 查找节点
 void search_node(LinkedList* head) {
 	search_employee_data(head);
 }
 
+// 打印链表
 void print_linked_list(LinkedList* head) {
 	system("cls");
 	LinkedList* p = head->next;
@@ -73,6 +98,7 @@ void print_linked_list(LinkedList* head) {
 	getch();
 }
 
+// 获取链表长度
 int get_linked_list_size(LinkedList* head) {
 	int size = 0;
 	LinkedList* p = head->next;
@@ -83,6 +109,7 @@ int get_linked_list_size(LinkedList* head) {
 	return size;
 }
 
+// 销毁链表
 void destroy_linked_list(LinkedList* head) {
 	LinkedList* current = head;
 	LinkedList* next;
@@ -94,6 +121,7 @@ void destroy_linked_list(LinkedList* head) {
 	}
 }
 
+// 链表排序
 void sort_linked_list(LinkedList* head) {
 	sort_employee(head);
 }

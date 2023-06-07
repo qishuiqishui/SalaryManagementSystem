@@ -20,9 +20,8 @@ void sell_goldfish() {
 	printf("\t\t\t\t数为x，则第j次余下x-（x+1）/（j+1）。当第4次出售\n\n");
 	printf("\t\t\t\t完毕时，应该剩下11条。若x满足上述要求，则x就是题目\n\n");
 	printf("\t\t\t\t的解。注意，(x+1 )/(j+1)应满足整除条件。\n\n");
-	int x;
 
-	for (x = 1;; x++) {
+	for (int x = 1;; x++) {
 		int j;
 		int remaining = x;
 
@@ -31,10 +30,9 @@ void sell_goldfish() {
 		}
 
 		if (remaining == 11) {
+			printf("原来的鱼缸有%d条金鱼\n", x);
+			getch();
 			break;
 		}
 	}
-
-	printf("原来的鱼缸有%d条金鱼\n", x);
-	getch();
 }
