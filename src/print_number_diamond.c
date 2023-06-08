@@ -27,20 +27,24 @@ void print_number_diamond() {
 	printf("\n\n请输入n(行数):");
 	scanf("%d", &n);
 	for (int k = 1; k <= n; k++) {							//循环n次
+		int num = k;
 		int d = (n + 1) / 2;								//行数的一半
+		if (k > d) {
+			num = n - num + 1;
+		}
 		int e = fabs(k - d);								//保证e为正数
 		for (int i = 1; i <= 3 * e; i++) {
 			printf(" ");									//打印空格
 		}
 		for (int i = 1; i <= d - e; i++) {
-			printf("%d", k);								//打印数字
+			printf("%d", num);								//打印数字
 		}
-		if (k != 1 && k != n) {									//不在第一行和最后一行
+		if (k != 1 && k != n) {								//不在第一行和最后一行
 			for (int i = 1; i <= 3 * (d - e) - 2; i++) {
 				printf(" ");								//打印空格
 			}
 			for (int i = 1; i <= d - e; i++) {
-				printf("%d", k);							//打印数字
+				printf("%d", num);							//打印数字
 			}
 		}
 		printf("\n");
