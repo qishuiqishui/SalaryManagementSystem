@@ -3,7 +3,7 @@
 #include <conio.h>
 #include "../include/sell_goldfish.h"
 
-
+// 竃弁署噬
 void sell_goldfish() {
 	system("cls");//賠徳
 	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");

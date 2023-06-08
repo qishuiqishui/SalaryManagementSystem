@@ -12,11 +12,14 @@
 #include "../include/salary_management_system_menu.h"
 
 void init();
-void function_service();
+void function_service(LinkedList* head);
 
+// 工资管理系统
 void salary_management_system() {
 	init();
 }
+
+// 初始化
 void init() {
 	LinkedList* head = create_linked_list();
 	print_startup_screen();
@@ -27,6 +30,7 @@ void init() {
 	function_service(head);
 }
 
+// 功能选择
 void function_service(LinkedList* head) {
 	int i = 9;
 	while (true) {

@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "../include/print_number_diamond.h"
 
+// 方忖説侘
 void print_number_diamond() {
 	system("cls");//賠徳
 	printf("\t\t\t\t！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！\n\n");

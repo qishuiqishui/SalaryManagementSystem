@@ -64,5 +64,5 @@ void print_startup_message() {
 	printf(" 统！");
 	Sleep(200);
 	printf(" (请按任意键进入...)");
-	getchar();
+	getch();
 }

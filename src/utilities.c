@@ -8,25 +8,28 @@
 #include "../include/linked_list.h"
 #include "../include/menu.h"
 
-
+// 比较函数，按照基本工资进行比较
 int compare_salary(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;
 	const employee* emp2 = (const employee*)b;
 	return  (emp1->salary < emp2->salary) - (emp1->salary > emp2->salary);
 }
 
+// 比较函数，按照实发工资进行比较
 int compare_actual(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;
 	const employee* emp2 = (const employee*)b;
 	return (emp1->actual < emp2->actual) - (emp1->actual > emp2->actual);
 }
 
+// 比较函数，按照职工号进行比较
 int compare_id(const void* a, const void* b) {
 	const employee* emp1 = (const employee*)a;
 	const employee* emp2 = (const employee*)b;
 	return emp1->id - emp2->id;
 }
 
+// 将链表转换为数组
 employee* list_to_array(LinkedList* head) {
 	int size = get_linked_list_size(head);
 	employee* arr = (employee*)malloc(sizeof(employee) * size);
@@ -39,6 +42,7 @@ employee* list_to_array(LinkedList* head) {
 	return arr;
 }
 
+// 创建职工数据
 employee* create_employee_data(LinkedList* head) {
 	while (true) {
 		show_console_cursor();
@@ -121,6 +125,7 @@ employee* create_employee_data(LinkedList* head) {
 	}
 }
 
+// 更新职工数据
 employee* update_employee_data(LinkedList* head, int id) {
 	LinkedList* p = head;
 	employee* new_data = (employee*)malloc(sizeof(employee));
@@ -237,6 +242,7 @@ employee* update_employee_data(LinkedList* head, int id) {
 	}
 }
 
+// 查找职工数据
 void search_employee_data(LinkedList* head) {
 	system("cls");
 	system("color 03");
@@ -280,6 +286,7 @@ void search_employee_data(LinkedList* head) {
 	}
 }
 
+// 按工号查找
 void search_by_id(LinkedList* head) {
 	LinkedList* p = head;
 	int id;
@@ -379,6 +386,7 @@ void search_by_id(LinkedList* head) {
 	}
 }
 
+// 按姓名查找
 void search_by_name(LinkedList* head) {
 	LinkedList* p = head;
 	char name[100];
@@ -479,6 +487,7 @@ void search_by_name(LinkedList* head) {
 	}
 }
 
+// 删除职工数据
 void delete_employee_data(LinkedList* head) {
 	LinkedList* p = head;
 	LinkedList* temp;
@@ -586,6 +595,7 @@ void delete_employee_data(LinkedList* head) {
 	}
 }
 
+// 职工排序
 void sort_employee(LinkedList* head) {
 	system("cls");
 	system("color 03");
@@ -632,6 +642,7 @@ void sort_employee(LinkedList* head) {
 
 }
 
+// 按基本工排序
 void sort_by_salary(LinkedList* head) {
 	int size = get_linked_list_size(head);
 
@@ -652,6 +663,7 @@ void sort_by_salary(LinkedList* head) {
 	free(arr);
 }
 
+// 按工号排序
 void sort_by_id(LinkedList* head) {
 	int size = get_linked_list_size(head);
 
@@ -672,6 +684,7 @@ void sort_by_id(LinkedList* head) {
 	free(arr);
 }
 
+// 按实发工资排序
 void sort_by_actual(LinkedList* head) {
 	int size = get_linked_list_size(head);
 
